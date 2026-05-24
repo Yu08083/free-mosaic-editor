@@ -1,0 +1,65 @@
+{
+  "name": "ふりー もざいく えでぃたー",
+  "short_name": "ふりーもざいく",
+  "description": "画像と動画にモザイクをかけ、EXIFやGPSなどのメタデータを完全除去するブラウザ完結ツール。ファイルは一切サーバーに送信されません。",
+  "lang": "ja",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
+  "orientation": "any",
+  "background_color": "#0a0a0c",
+  "theme_color": "#0a0a0c",
+  "categories": [
+    "photo",
+    "utilities",
+    "productivity"
+  ],
+  "icons": [
+    {
+      "src": "assets/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "ふりー もざいく えでぃたー"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "新しい画像を開く",
+      "short_name": "新規",
+      "description": "ファイルピッカーを開いて画像/動画を読み込み",
+      "url": "./?open=1"
+    }
+  ]
+}

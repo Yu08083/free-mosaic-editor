@@ -1,0 +1,56 @@
+:root {
+  --bg:        #0a0a0c;
+  --bg-2:      #131316;
+  --panel:     #16161a;
+  --panel-2:   #1d1d22;
+  --line:      #26262d;
+  --line-2:    #353540;
+  --line-3:    #4a4a58;
+
+  --ink:       #f2eef0;
+  --ink-dim:   #a89aa8;
+  --ink-mute:  #6a606c;
+
+  --accent:        #ff6fa8;
+  --accent-soft:   #3a1f2c;
+  --accent-2:      #a78bfa;
+  --accent-3:      #5eead4;
+  --accent-4:      #fcd34d;
+  --danger:        #ff7676;
+  --danger-soft:   #3a1f1f;
+  --ok:            #6dd9a0;
+  --warn:          #f7b955;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow:    0 6px 22px rgba(0, 0, 0, 0.45),
+               0 2px 6px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.55),
+               0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 0 4px rgba(255, 111, 168, 0.25);
+
+  --radius-xs: 6px;
+  --radius:    10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  --mono: 'M PLUS Rounded 1c', 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  --sans: 'M PLUS Rounded 1c', 'Nunito', system-ui, -apple-system,
+          'Hiragino Maru Gothic ProN', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+}
+
+body {
+  background:
+    radial-gradient(900px 500px at 10% -10%, rgba(255, 111, 168, 0.10), transparent 60%),
+    radial-gradient(700px 400px at 95% 0%,   rgba(167, 139, 250, 0.07), transparent 60%),
+    radial-gradient(600px 400px at 50% 110%, rgba(94, 234, 212, 0.04), transparent 60%),
+    var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.55;
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
