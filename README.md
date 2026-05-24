@@ -3,7 +3,9 @@
 画像・動画にモザイクをかけて、メタデータ (EXIF/GPS/XMP/IPTC など) を完全除去するツールです。
 **すべての処理がブラウザ内で完結し、ファイルは一切サーバーに送信されません。**
 
-[![preview](assets/og-image.png)](./)
+公開URL: https://yu08083.github.io/free-mosaic-editor/
+
+[![preview](assets/og-image.png)](https://yu08083.github.io/free-mosaic-editor/)
 
 ## 特徴
 
@@ -11,6 +13,7 @@
 - 画像 & 動画: JPEG / PNG / WebP / GIF / MP4 / WebM / MOV
 - 10種類のモザイク: ピクセル / ブラー / すりガラス / シャッフル / 網点 / 結晶化 / 渦巻き / ノイズ / 塗り / 絵文字
 - 矩形 & 楕円形状、複数領域、領域ごとに独立した設定
+- **動画は時間範囲を指定して部分的にモザイクをかけられる**
 - EXIF/メタデータ解析と書き出し時の完全除去
 - スマートフォン対応 (safe-area-inset / タップ領域 44px+ / iOS自動ズーム防止)
 - SEO完備 (Open Graph / Twitter Card / JSON-LD / sitemap.xml)
@@ -20,58 +23,14 @@
 1. ファイルをドラッグ&ドロップ、または「ファイルを選ぶ」をタップ
 2. キャンバス上をドラッグしてモザイク領域を追加
 3. サイドバーでモザイクタイプとオプションを調整
-4. 「メタデータ」タブで EXIF/GPS の有無を確認
-5. 「書き出し」タブでフォーマットを選んでダウンロード
+4. 動画の場合は「適用範囲」で開始/終了時刻を指定可能
+5. 「メタデータ」タブで EXIF/GPS の有無を確認
+6. 「書き出し」タブでフォーマットを選んでダウンロード
 
 ### キーボードショートカット
 
 - `Del` / `Backspace`: 選択中の領域を削除
 - `Esc`: 選択解除
-
-## GitHub Pages にデプロイ
-
-```bash
-git init
-git add .
-git commit -m "Deploy"
-git remote add origin https://github.com/<username>/<repo>.git
-git push -u origin main
-```
-
-リポジトリ設定 → Pages → Source を `main` ブランチに設定。
-`https://<username>.github.io/<repo>/` でアクセスできます。
-
-### デプロイ後の推奨作業
-
-OGP・canonical URL を絶対URLに置換すると SNS シェアでプレビューが表示されます:
-
-```bash
-sed -i 's|href="./"|href="https://yourname.github.io/redact/"|g' index.html
-sed -i 's|content="\./|content="https://yourname.github.io/redact/|g' index.html
-```
-
-`.nojekyll` が含まれているので、`_shape.js` のようなアンダースコア始まりのファイルも問題なく配信されます。
-
-## ファイル構成
-
-```
-.
-├── index.html
-├── manifest.webmanifest
-├── robots.txt
-├── sitemap.xml
-├── .nojekyll
-├── assets/        favicon各サイズ / apple-touch-icon / maskable / og-image
-├── css/           (8) reset / tokens / layout / components / stage / panel / metadata / modal
-└── js/
-    ├── main.js
-    ├── core/      (4) dom / events / state / utils
-    ├── ui/        (8) tabs / dropzone / stage / pointer / regionList / toolbar / videoControls / modal
-    ├── mosaic/    (12) index / _shape / _seed / pixelate / blur / frosted / scramble /
-    │                    halftone / crystallize / swirl / noise / fill / emoji
-    ├── metadata/  (8) index / tiff / jpeg / png / webp / tags / gps / render
-    └── export/    (3) image / video / demo
-```
 
 ## モザイク選択の指針
 
@@ -90,6 +49,43 @@ sed -i 's|content="\./|content="https://yourname.github.io/redact/|g' index.html
 
 確実に隠したい個人情報には「塗りつぶし」「絵文字」「シャッフル」を推奨します。
 
+## ファイル構成
+
+```
+.
+├── index.html
+├── manifest.webmanifest
+├── robots.txt
+├── sitemap.xml
+├── .nojekyll
+├── LICENSE
+├── README.md
+├── assets/        favicon各サイズ / apple-touch-icon / maskable / og-image
+├── css/           (8) reset / tokens / layout / components / stage / panel / metadata / modal
+└── js/
+    ├── main.js
+    ├── core/      (4) dom / events / state / utils
+    ├── ui/        (8) tabs / dropzone / stage / pointer / regionList / toolbar / videoControls / modal
+    ├── mosaic/    (13) index / _shape / _seed / pixelate / blur / frosted / scramble /
+    │                    halftone / crystallize / swirl / noise / fill / emoji
+    ├── metadata/  (8) index / tiff / jpeg / png / webp / tags / gps / render
+    └── export/    (3) image / video / demo
+```
+
+## GitHub Pages デプロイ
+
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/yu08083/free-mosaic-editor.git
+git push -u origin main
+```
+
+リポジトリ設定 → Pages → Source を `main` ブランチに設定で公開されます。
+`.nojekyll` が含まれているので、`_shape.js` のようなアンダースコア始まりのファイルも問題なく配信されます。
+
 ## ブラウザ要件
 
 - ES Modules 対応のモダンブラウザ (Chrome 89+, Firefox 89+, Safari 15+)
@@ -98,4 +94,6 @@ sed -i 's|content="\./|content="https://yourname.github.io/redact/|g' index.html
 
 ## ライセンス
 
-MIT
+MIT License — 詳細は [LICENSE](./LICENSE) を参照。
+
+Copyright (c) 2026 yu ([@yu_](https://twitter.com/yu_))
